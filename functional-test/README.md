@@ -1,0 +1,1 @@
+Contains application manifests to be deployed to `functional-test` deployment target.
