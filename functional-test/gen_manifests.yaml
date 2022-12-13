@@ -38,10 +38,10 @@ spec:
         image: ghcr.io/microsoft/kalypso-app-src/hello-world:0.0.1-12
         imagePullPolicy: Always
         ports:
-        - containerPort: 9090
+        - containerPort: "9090"
         env:
         - name: PORT
-          value: 9090
+          value: "9090"
         - name: CLUSTER_NAME
           valueFrom:
               configMapKeyRef:
