@@ -11,7 +11,7 @@ spec:
     - protocol: TCP
       port: 9090
       targetPort: 9090
-------
+---
 # Source: hello-world/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
