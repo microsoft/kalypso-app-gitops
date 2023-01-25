@@ -18,7 +18,7 @@ kind: Deployment
 metadata:
   name: hello-world-deployment
   annotations:
-    version: 0.0.1-12
+    version: 0.0.1-14
 spec:
   strategy: 
     type: Recreate      
@@ -31,11 +31,11 @@ spec:
       labels:
         app: hello-world      
       annotations:
-        version: 0.0.1-12
+        version: 0.0.1-14
     spec:
       containers:
       - name: hello-world
-        image: ghcr.io/microsoft/kalypso-app-src/hello-world:0.0.1-12
+        image: ghcr.io/microsoft/kalypso-app-src/hello-world:0.0.1-14
         imagePullPolicy: Always
         ports:
         - containerPort: 9090
@@ -45,20 +45,20 @@ spec:
         - name: CLUSTER_NAME
           valueFrom:
               configMapKeyRef:
-                name: plarform-config
+                name: platform-config
                 key: CLUSTER_NAME
         - name: REGION
           valueFrom:
               configMapKeyRef:
-                name: plarform-config
+                name: platform-config
                 key: REGION
         - name: ENVIRONMENT
           valueFrom:
               configMapKeyRef:
-                name: plarform-config
+                name: platform-config
                 key: ENVIRONMENT
         - name: DATABASE_URL
           valueFrom:
               configMapKeyRef:
-                name: plarform-config
+                name: platform-config
                 key: DATABASE_URL
