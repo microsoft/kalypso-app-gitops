@@ -9,8 +9,8 @@ spec:
     app: hello-world
   ports:
     - protocol: TCP
-      port: 9090
-      targetPort: 9090
+      port: 9095
+      targetPort: 9095
 ---
 # Source: hello-world/templates/deployment.yaml
 apiVersion: apps/v1
@@ -38,10 +38,10 @@ spec:
         image: ghcr.io/microsoft/kalypso-app-src/hello-world:0.0.1-22
         imagePullPolicy: Always
         ports:
-        - containerPort: 9090
+        - containerPort: 9095
         env:
         - name: PORT
-          value: "9090"
+          value: "9095"
         - name: CLUSTER_NAME
           valueFrom:
               configMapKeyRef:
